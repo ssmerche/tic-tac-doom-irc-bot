@@ -1,4 +1,4 @@
-# compojure-test
+# tic-tac-doom bot
 
 FIXME
 
