@@ -1,4 +1,4 @@
-# tic-tac-doom bot
+# tic-tac-doom irc bot
 
 FIXME
 
