@@ -1,4 +1,4 @@
-(ns compojure-test.test.handler
+(ns tic-tac-doom-bot.test.handler
   (:use clojure.test
         ring.mock.request  
         compojure-test.handler))

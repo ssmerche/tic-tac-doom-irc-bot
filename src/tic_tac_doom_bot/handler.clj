@@ -1,4 +1,4 @@
-(ns compojure-test.handler
+(ns tic-tac-doom-bot.handler
   (:use compojure.core korma.db korma.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
@@ -12,7 +12,7 @@
     (let [uri (URI. url)
           host (.getHost uri)
           port (.getPort uri)
-          [user password] ((string/split (.getUserInfo uri) #":"))
+          [user password] (string/split (.getUserInfo uri) #":")
           db (.substring (.getPath uri) 1)]
       {:host host :port port :user user :password password :db db})))
 

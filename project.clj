@@ -1,4 +1,4 @@
-(defproject compojure-test "0.1.0-SNAPSHOT"
+(defproject tic-tac-doom-bot "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.4.0"]
@@ -11,8 +11,8 @@
                                               com.sun.jdmk/jmxtools
                                               com.sun.jmx/jmxri]]]
   :plugins [[lein-ring "0.7.5"]]
-  :ring {:handler compojure-test.handler/app
-         :init compojure-test.handler/start-bot}
+  :ring {:handler tic-tac-doom-bot.handler/app
+         :init tic-tac-doom-bot.handler/start-bot}
   :min-lein-version "2.0.0"
   :profiles
   {:dev {:dependencies [[ring-mock "0.1.3"]]}})
