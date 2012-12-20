@@ -10,7 +10,7 @@
                                               javax.jms/jms
                                               com.sun.jdmk/jmxtools
                                               com.sun.jmx/jmxri]]]
-  :plugins [[lein-ring "0.7.5"]]
+  :plugins [[lein-ring "0.7.5"] [lein-exec "0.2.1"]]
   :ring {:handler tic-tac-doom-bot.handler/app
          :init tic-tac-doom-bot.handler/start-bot}
   :min-lein-version "2.0.0"
