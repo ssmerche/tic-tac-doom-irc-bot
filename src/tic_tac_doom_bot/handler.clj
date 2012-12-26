@@ -1,6 +1,7 @@
 (ns tic-tac-doom-bot.handler
   (:use compojure.core korma.db korma.core)
   (:require [compojure.handler :as handler]
+            [ring.adapter.jetty :as jetty]
             [compojure.route :as route]
             [qbits.ash :as ash]
             [clojure.string :as string])
@@ -50,3 +51,7 @@
 (defn start-bot [& args]
   (let [bot (-> (apply ash/make-bot irc-info) bot-handler)]
     (ash/send-message bot room "Hello from the tic-tac-doom bot")))
+
+(defn -main [port]
+  (start-bot)
+  (jetty/run-jetty app {:port (Integer. port)}))
