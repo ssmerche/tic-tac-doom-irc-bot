@@ -1,11 +1,16 @@
 (ns tic-tac-doom-bot.handler
-  (:use compojure.core korma.db korma.core)
+  (:use compojure.core korma.db korma.core hiccup.core)
   (:require [compojure.handler :as handler]
             [ring.adapter.jetty :as jetty]
             [compojure.route :as route]
             [qbits.ash :as ash]
             [clojure.string :as string])
   (:import [java.sql Date] [java.net URI]))
+
+(defn render-message [msg]
+  (html [:p [:span.timestamp (str "[" (msg :timestamp)) "] "]
+         [:span.username (str (msg :username) ":") " "]
+         [:span.content (msg :content)]]))
 
 (defn db-info-from-url [url]
   (if (empty? url)
@@ -29,7 +34,7 @@
                :channels [room] :host "irc.freenode.net"])
 
 (defroutes app-routes
-  (GET "/" [] (pr-str (select messages)))
+  (GET "/" [] (string/join "" (map render-message (select messages))))
   (route/not-found "Not Found"))
 
 ; rename user key to user since postgres won't let me have a column called user
