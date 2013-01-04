@@ -1,4 +1,4 @@
-(def url "http://immense-island-3888.herokuapp.com/")
+(def url "http://tic-tac-doom-log.herokuapp.com/")
 
 (slurp url)
 
