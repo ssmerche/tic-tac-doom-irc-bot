@@ -7,6 +7,7 @@
                  [cc.qbits/ash "0.2.4"]
                  [korma "0.3.0-beta11"]
                  [hiccup "1.0.2"]
+                 [environ "0.3.0"]
                  [postgresql/postgresql "9.1-901-1.jdbc4"]
                  [log4j "1.2.15" :exclusions [javax.mail/mail
                                               javax.jms/jms

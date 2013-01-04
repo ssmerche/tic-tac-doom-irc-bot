@@ -1,7 +1,7 @@
 (ns tic-tac-doom-bot.db
   (:use korma.db korma.core)
   (:require [clojure.string :as string])
-  (:import [java.net URI]))
+  (:import [java.net URI] [java.sql Timestamp]))
 
 (defn db-info-from-url [url]
   (if (empty? url)
@@ -19,8 +19,14 @@
 
 (defentity messages)
 
+; event has keys user, channel, content, timestamp
+; rename user key to user since postgres won't let me have a column called user
+(defn tweak-event [event]
+  (-> event (assoc :username (event :user)) (dissoc :user)
+    (update-in [:timestamp] #(Timestamp. %))))
+
 (defn save-message [event]
-  (insert messages (values event)))
+  (insert messages (values (tweak-event event))))
 
 (defn get-messages [] (select messages))
 

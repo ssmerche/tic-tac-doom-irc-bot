@@ -1,10 +1,10 @@
 (ns tic-tac-doom-bot.bot
   (:require [qbits.ash :as ash])
-  (:use tic-tac-doom-bot.plugins))
+  (:use tic-tac-doom-bot.plugins environ.core))
 
-(def room (or (System/getenv "BOT_ROOM") "#tic-tac-doom"))
+(def bot-name (env :bot-name))
 
-(def bot-name (or (System/getenv "BOT_NAME") "tic-tac-doom-bot"))
+(def room (env :bot-room))
 
 (def irc-info [:nick bot-name :name bot-name :port 6667
                :channels [room] :host "irc.freenode.net"])
