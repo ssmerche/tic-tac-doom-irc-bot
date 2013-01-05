@@ -1,11 +1,13 @@
 (ns tic-tac-doom-bot.templates
   (:require [clojure.string :as string])
   (:use hiccup.core [clj-time.core :only (time-zone-for-offset)]
-        clj-time.coerce clj-time.format))
+        clj-time.coerce clj-time.format)
+  (:import [org.joda.time.format DateTimeFormat]))
 
 (def timezone (time-zone-for-offset -8))
 
-(def timestamp-formatter (with-zone (formatter "MM-dd-yyyy hh:mm:ss") timezone))
+(def timestamp-formatter (with-zone (DateTimeFormat/forPattern 
+                                      "MM-dd-YYYY hh:mm:ssa") timezone))
 
 (defn format-timestamp [timestamp]
   (let [date (from-date timestamp)]
