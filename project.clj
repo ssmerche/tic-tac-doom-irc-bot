@@ -1,7 +1,7 @@
 (defproject tic-tac-doom-bot "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-  :dependencies [[org.clojure/clojure "1.4.0"]
+  :dependencies [[org.clojure/clojure "1.5.0-RC4"]
                  [ring/ring-jetty-adapter "1.1.6"]
                  [compojure "1.1.3"]
                  [cc.qbits/ash "0.2.4"]
