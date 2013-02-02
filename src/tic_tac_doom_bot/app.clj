@@ -13,6 +13,7 @@
 
 (def app (handler/site app-routes))
 
-(defn -main [port]
+(defn -main [& [port]]
   (bot/start-bot)
-  (jetty/run-jetty app {:port (Integer/parseInt port)}))
+  (jetty/run-jetty 
+    app {:port (if port (Integer/parseInt port) 8081)}))

@@ -14,9 +14,9 @@ Add this to the :user map in $HOME/.lein/profiles.clj:
         :hooks [environ.leiningen.hooks]
         :env {:bot-room "#some-test-room" :bot-name "test-bot"}
 
-To start a jetty server:
+To start a jetty server (default port is 8081):
 
-    lein run $PORT
+    lein run # add a port number if you want a different port
     
 To start an immutant server (add ```-Djboss.socket.binding.port-offset=1``` 
 if you already have a immutant or torquebox app running):
