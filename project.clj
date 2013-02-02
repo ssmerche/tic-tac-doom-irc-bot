@@ -16,5 +16,6 @@
                                               com.sun.jmx/jmxri]]]
   :plugins [[lein-exec "0.2.1"]]
   :min-lein-version "2.0.0"
-  :profiles
-  {:dev {:dependencies [[ring-mock "0.1.3"]]}})
+  :profiles {:dev {:dependencies [[ring-mock "0.1.3"]]}}
+  :main tic-tac-doom-bot.app
+  :immutant {:context-path "/"})
