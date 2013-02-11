@@ -16,8 +16,8 @@
 (defn message [msg]
   (html [:p 
          [:span.timestamp (str "[" (format-timestamp (msg :timestamp))) "] "]
-         [:span.username (str (msg :username) ":") " "]
-         [:span.content (msg :content)]]))
+         [:span.username (h (str (msg :username) ":")) " "]
+         [:span.content (h (msg :content))]]))
 
 (defn messages [msgs]
   (string/join "" (map message msgs)))
