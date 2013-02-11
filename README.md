@@ -6,6 +6,11 @@ You will need [Leiningen][1] 2.0.0 or above installed.
 
 [1]: https://github.com/technomancy/leiningen
 
+## Database Setup
+1. Install [PostgreSQL](http://www.postgresql.org/)
+2. `createdb tic_tac_doom_irc`
+3. `lein migrate`
+
 ## Development
 
 Add this to the :user map in $HOME/.lein/profiles.clj:
