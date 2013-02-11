@@ -1,5 +1,4 @@
 (ns tic-tac-doom-bot.plugins
-  (:use environ.core)
   (:require [qbits.ash :as ash] [tic-tac-doom-bot.db :as db]))
 
 (defn record-messages [bot]

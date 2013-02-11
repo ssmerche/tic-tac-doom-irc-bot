@@ -6,7 +6,7 @@
 (defn db-info-from-url [url]
   (if (empty? url)
     {:host "localhost" :port 5432 :user (System/getenv "USER") 
-     :db "tic_tac_doom_irc"}
+     :db "tic_tac_doom_irc" :password ""}
     (let [uri (URI. url)
           host (.getHost uri)
           port (.getPort uri)
